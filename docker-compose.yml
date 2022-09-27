@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: ./docker/dev/php/Dockerfile
+    restart: on-failure
+    volumes:
+      - .:/var/www/html:cached
+      - ./docker/dev/php/php.ini:/usr/local/etc/php/php.ini:ro

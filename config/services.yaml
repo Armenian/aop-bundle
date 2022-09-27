@@ -1,0 +1,13 @@
+parameters:
+  jms_aop.interceptor_loader.class: DMP\AopBundle\Aop\InterceptorLoader
+
+services:
+  jms_aop.pointcut_container:
+    class: DMP\AopBundle\Aop\PointcutContainer
+    public: true
+
+  jms_aop.interceptor_loader:
+    class: '%jms_aop.interceptor_loader.class%'
+    public: true
+    arguments:
+      - '@service_container'

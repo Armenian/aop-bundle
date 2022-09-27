@@ -1,2 +1,11 @@
-vendor
+/.idea/
 composer.lock
+.env
+
+# Managed by Composer
+/vendor/
+
+# PHPUnit
+/report/
+/phpunit.xml
+.phpunit.result.cache
