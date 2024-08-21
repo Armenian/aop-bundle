@@ -1,7 +1,7 @@
 #https://olvlvl.com/2019-06-docker-pecl-without-pecl
 FROM php:8.1-fpm
 
-RUN apt update && apt install -y libicu-dev libpq-dev libpng-dev libfreetype6-dev libyaml-dev libjpeg-dev libwebp-dev libmpdec-dev libc-client-dev libkrb5-dev librabbitmq-dev \
+RUN apt update && apt install -y libicu-dev libpq-dev libpng-dev libfreetype6-dev libyaml-dev libjpeg-dev libwebp-dev libc-client-dev libkrb5-dev librabbitmq-dev \
     libjpeg62 libxtst6
 
 COPY ./docker/dev/php/docker-php-ext-get /usr/local/bin/
@@ -33,9 +33,6 @@ RUN docker-php-source extract \
     # ext-json_post
     && docker-php-ext-get json_post 1.1.0 \
     && docker-php-ext-install json_post \
-    # ext-decimal
-    && docker-php-ext-get decimal 1.4.0 \
-    && docker-php-ext-install decimal \
     # ext-amqp
     && docker-php-ext-get amqp ${PHP_AMQP_VERSION} \
     && docker-php-ext-install amqp \

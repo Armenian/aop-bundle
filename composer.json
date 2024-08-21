@@ -1,6 +1,6 @@
 {
     "name": "dmp/aop-bundle",
-    "description": "Adds AOP capabilities to Symfony5",
+    "description": "Adds AOP capabilities to Symfony6",
     "keywords": ["annotations","aop"],
     "type": "symfony-bundle",
     "license": "Apache-2.0",
@@ -16,12 +16,12 @@
     ],
     "require": {
         "php": ">=8.1",
-        "dmp/cg-lib": "^0.1"
+        "dmp/cg-lib": "^0.1.1"
     },
     "require-dev": {
         "matthiasnoback/symfony-dependency-injection-test": "^4.3",
         "phpunit/phpunit": "^9.5",
-        "symfony/http-kernel": "^5.4"
+        "symfony/http-kernel": "*"
     },
     "autoload": {
         "psr-4": {
@@ -36,5 +36,11 @@
     "scripts": {
         "test": "phpunit",
         "test-cc": "phpunit coverage-html report/"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "require": "6.4.*"
+        }
     }
 }
